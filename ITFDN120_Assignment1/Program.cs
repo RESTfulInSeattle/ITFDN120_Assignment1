@@ -8,6 +8,7 @@ namespace ITFDN120_Assignment1
             'u','r','s','t','u','v','w','x','y','z','A','B','C','D','E','F','G','H','I','J','K','L','M','N',
                 'O','P','Q','U','R','S','T','U','V','W','X','Y','Z','0','1','2','3','4','5','6','7','8','9'};
 
+        //Given a letter, return its index in the char array of letters
         public static int GetIndex(char letter)
         {
             for(int i = 0; i<letters.Length; i++)
@@ -17,7 +18,8 @@ namespace ITFDN120_Assignment1
 
             return 0;
         }
-
+        
+        //Takes a string, and returns the number comprised of the indicies of the letters
         public static int Encode(string input)
         {
             int i = 0;
@@ -36,10 +38,12 @@ namespace ITFDN120_Assignment1
             string url = "LpuPe81bc2w";
             string shortenedURL = "";
             
+            //Encode the string url into a number based on the indicies of the letters
             int encoded = Encode(url);
 
             while(encoded>0)
             {
+                //Add the remainder of a base 62 division to the shortenedURL
                 shortenedURL = GetIndex((char)(encoded % 62)) + shortenedURL;
                 encoded = encoded / 62;
             }
