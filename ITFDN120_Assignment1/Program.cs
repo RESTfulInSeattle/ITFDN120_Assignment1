@@ -4,9 +4,9 @@ namespace ITFDN120_Assignment1
 {
     class URLShortener
     {
-        public static char[] letters = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q',
-            'u','r','s','t','u','v','w','x','y','z','A','B','C','D','E','F','G','H','I','J','K','L','M','N',
-                'O','P','Q','U','R','S','T','U','V','W','X','Y','Z','0','1','2','3','4','5','6','7','8','9'};
+        public static char[] letters = {'0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F','G','H','I','J','K','L','M','N',
+                'O','P','Q','U','R','S','T','U','V','W','X','Y','Z','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q',
+            'u','r','s','t','u','v','w','x','y','z'};
 
         //Given a letter, return its index in the char array of letters
         public static int GetIndex(char letter)
@@ -27,7 +27,7 @@ namespace ITFDN120_Assignment1
 
             while(i<input.Length)
             {
-                encoded += GetIndex(input[i]) * 10 * (input.Length - i);
+                encoded = encoded*62 + GetIndex(input[i]);
                 i++;
             }
 
