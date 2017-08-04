@@ -20,10 +20,10 @@ namespace ITFDN120_Assignment1
         }
         
         //Takes a string, and returns the number comprised of the indicies of the letters
-        public static int Encode(string input)
+        public static long Encode(string input)
         {
             int i = 0;
-            int encoded=0;
+            long encoded=0;
 
             while(i<input.Length)
             {
@@ -39,7 +39,7 @@ namespace ITFDN120_Assignment1
             string shortenedURL = "";
             
             //Encode the string url into a number based on the indicies of the letters
-            int encoded = Encode(url);
+            long encoded = Encode(url);
 
             while(encoded>0)
             {
